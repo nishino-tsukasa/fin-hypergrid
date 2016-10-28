@@ -1,0 +1,1576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Mixin: drillDown</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-cellEditors.html">cellEditors</a></li><li><a href="module-cellRenderers.html">cellRenderers</a></li><li><a href="module-defaults.html">defaults</a></li><li><a href="module-effects.html">effects</a></li><li><a href="module-localization.html">localization</a></li><li><a href="module-src_behaviors_cellProperties.html">src/behaviors/cellProperties</a></li></ul><h3>Classes</h3><ul><li><a href="AggregationsView.html">AggregationsView</a></li><li><a href="Base.html">Base</a></li><li><a href="Behavior.html">Behavior</a></li><li><a href="behaviors.JSON.html">JSON</a></li><li><a href="Button.html">Button</a></li><li><a href="CellClick.html">CellClick</a></li><li><a href="CellEditing.html">CellEditing</a></li><li><a href="CellEditor.html">CellEditor</a></li><li><a href="CellEvent-CellEvent.html">CellEvent</a></li><li><a href="CellRenderer.html">CellRenderer</a></li><li><a href="CellSelection.html">CellSelection</a></li><li><a href="Color.html">Color</a></li><li><a href="Column.html">Column</a></li><li><a href="ColumnAutosizing.html">ColumnAutosizing</a></li><li><a href="ColumnMoving.html">ColumnMoving</a></li><li><a href="ColumnPicker.html">ColumnPicker</a></li><li><a href="ColumnResizing.html">ColumnResizing</a></li><li><a href="ColumnSchemaFactory.html">ColumnSchemaFactory</a></li><li><a href="ColumnSelection.html">ColumnSelection</a></li><li><a href="ColumnSorting.html">ColumnSorting</a></li><li><a href="Combo.html">Combo</a></li><li><a href="ComboBox.html">ComboBox</a></li><li><a href="DataModel.html">DataModel</a></li><li><a href="dataModels.JSON.html">JSON</a></li><li><a href="global.html#DataSourceOrigin">DataSourceOrigin</a></li><li><a href="Date.html">Date</a></li><li><a href="DefaultFilter.html">DefaultFilter</a></li><li><a href="Dialog.html">Dialog</a></li><li><a href="ErrorCell.html">ErrorCell</a></li><li><a href="Feature.html">Feature</a></li><li><a href="FilterBox.html">FilterBox</a></li><li><a href="Filters.html">Filters</a></li><li><a href="groupedHeader.mixInTo-GroupedHeader.html">GroupedHeader</a></li><li><a href="Hyperfilter.html">Hyperfilter</a></li><li><a href="Hypergrid.html">Hypergrid</a></li><li><a href="KeyPaging.html">KeyPaging</a></li><li><a href="LastSelection.html">LastSelection</a></li><li><a href="ManageFilters.html">ManageFilters</a></li><li><a href="module-cellEditors-CellEditors.html">CellEditors</a></li><li><a href="module-cellRenderers-CellRenderers.html">CellRenderers</a></li><li><a href="module-localization-DateFormatter.html">DateFormatter</a></li><li><a href="module-localization-Formatter.html">Formatter</a></li><li><a href="module-localization-Localization.html">Localization</a></li><li><a href="module-localization-NumberFormatter.html">NumberFormatter</a></li><li><a href="Number.html">Number</a></li><li><a href="OnHover.html">OnHover</a></li><li><a href="ParserCQL.html">ParserCQL</a></li><li><a href="Renderer.html">Renderer</a></li><li><a href="RowResizing.html">RowResizing</a></li><li><a href="RowSelection.html">RowSelection</a></li><li><a href="SelectionModel.html">SelectionModel</a></li><li><a href="SimpleCell.html">SimpleCell</a></li><li><a href="Slider.html">Slider</a></li><li><a href="SparkBar.html">SparkBar</a></li><li><a href="SparkLine.html">SparkLine</a></li><li><a href="Spinner.html">Spinner</a></li><li><a href="Textfield.html">Textfield</a></li><li><a href="ThumbwheelScrolling.html">ThumbwheelScrolling</a></li><li><a href="TreeCell.html">TreeCell</a></li><li><a href="TreeView.html">TreeView</a></li></ul><h3>Mixins</h3><ul><li><a href="drillDown.html">drillDown</a></li><li><a href="groupedHeader.html">groupedHeader</a></li><li><a href="rowById.html">rowById</a></li></ul><h3>Interfaces</h3><ul><li><a href="dataSourceHelperAPI.html">dataSourceHelperAPI</a></li><li><a href="localizerInterface.html">localizerInterface</a></li></ul><h3>Global</h3><ul><li><a href="global.html#addDeepProperties">addDeepProperties</a></li><li><a href="global.html#append">append</a></li><li><a href="global.html#cancelEditing">cancelEditing</a></li><li><a href="global.html#CellEvent">CellEvent</a></li><li><a href="global.html#clearAllCellProperties">clearAllCellProperties</a></li><li><a href="global.html#close">close</a></li><li><a href="global.html#columnEnumKey">columnEnumKey</a></li><li><a href="global.html#computeCellsBounds">computeCellsBounds</a></li><li><a href="global.html#copy">copy</a></li><li><a href="global.html#copyAll">copyAll</a></li><li><a href="global.html#createColumnProperties">createColumnProperties</a></li><li><a href="global.html#data">data</a></li><li><a href="global.html#deprecated">deprecated</a></li><li><a href="global.html#enlivenSubgrids">enlivenSubgrids</a></li><li><a href="global.html#errorEffectEnd">errorEffectEnd</a></li><li><a href="global.html#findDataSourceByType">findDataSourceByType</a></li><li><a href="global.html#getActiveColumnIndex">getActiveColumnIndex</a></li><li><a href="global.html#getDataIndex">getDataIndex</a></li><li><a href="global.html#getDataSource">getDataSource</a></li><li><a href="global.html#getFilteredData">getFilteredData</a></li><li><a href="global.html#getVisibleColumns">getVisibleColumns</a></li><li><a href="global.html#hideEditor">hideEditor</a></li><li><a href="global.html#initialize">initialize</a></li><li><a href="global.html#installPlugins">installPlugins</a></li><li><a href="global.html#isGridRow">isGridRow</a></li><li><a href="global.html#modes">modes</a></li><li><a href="global.html#onClick">onClick</a></li><li><a href="global.html#open">open</a></li><li><a href="global.html#openDialog">openDialog</a></li><li><a href="global.html#propPrep">propPrep</a></li><li><a href="global.html#registerHelperAPI">registerHelperAPI</a></li><li><a href="global.html#saveFolder">saveFolder</a></li><li><a href="global.html#saveFolders">saveFolders</a></li><li><a href="global.html#setColumnFilterState">setColumnFilterState</a></li><li><a href="global.html#setDialogOptions">setDialogOptions</a></li><li><a href="global.html#uninstallPlugins">uninstallPlugins</a></li><li><a href="global.html#unstashPipeline">unstashPipeline</a></li><li><a href="global.html#updateDataSources">updateDataSources</a></li><li><a href="global.html#validateEditorValue">validateEditorValue</a></li><li><a href="global.html#valOrFunc">valOrFunc</a></li><li><a href="global.html#visibleColumns">visibleColumns</a></li><li><a href="global.html#visibleRows">visibleRows</a></li></ul>
+</nav>
+<div id="main">
+
+    <h1 class="page-title">Mixin: drillDown</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>
+        drillDown
+        </h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Methods for programmatic drill-down manipulation.</p>
+<p>Intended to be mixed into Hypergrid's in-memory data model object (./src/dataModels/JSON.js) using the included <code>drillDown.mixInTo</code>
+<em>Do not use directly.</em></p>
+<p>For example, you can mix it into the data model prototype like this:</p>
+<pre class="prettyprint source lang-html"><code>&lt;script src=&quot;https://openfin.github.io/fin-hypergrid/build/fin-hypergrid.min.js&quot;>&lt;/script>
+&lt;script src=&quot;https://openfin.github.io/fin-hypergrid/build/fin-hypergrid-drilldown.min.js&quot;>&lt;/script></code></pre><pre class="prettyprint source lang-javascript"><code>fin.Hypergrid.drillDown.mixInTo(fin.Hypergrid.dataModels.JSON.prototype);
+var grid = new fin.Hypergrid(element, options);</code></pre><p>Or like this:</p>
+<pre class="prettyprint source lang-javascript"><code>var grid1 = new fin.Hypergrid(element, options);
+var grid2 = new fin.Hypergrid(element, options);
+fin.Hypergrid.drillDown.mixInTo(Object.getPrototypeOf(grid1.behavior.dataModel));</code></pre><p>Or into s specific instance:</p>
+<pre class="prettyprint source lang-javascript"><code>var grid1 = new fin.Hypergrid(element, options);
+var grid2 = new fin.Hypergrid(element, options);
+fin.Hypergrid.drillDown.mixInTo(grid1.behavior.dataModel);</code></pre><p>In this example, the mixed in methods will be available to <code>grid1</code> but not <code>grid2</code>.</p>
+<p>Using the npm modules, the above would look like this:</p>
+<pre class="prettyprint source lang-javascript"><code>var Hypergrid = require('fin-hypergrid');
+var drillDown = require('fin-hypergrid-drill-down');
+var grid = new fin.Hypergrid(element, options);
+drillDown.mixInTo(grid.behavior.dataModel);</code></pre><p>And this:</p>
+<pre class="prettyprint source lang-javascript"><code>var Hypergrid = require('fin-hypergrid');
+var dataModelPrototype = require('fin-hypergrid/dataModels.JSON').prototype;
+var drillDown = require('fin-hypergrid-drill-down');
+drillDown.mixInTo(dataModelPrototype);
+var grid = new fin.Hypergrid(element, options);</code></pre><p><strong>Glossary</strong></p>
+<ul>
+<li><em>collapsed (rows)</em> - Rows whose drill-down control is &quot;closed&quot; (leftwards-facing triangle).</li>
+<li><em>collapsable (rows)</em> - See <em>expandable</em>.</li>
+<li><em>expanded (rows)</em> - Rows whose drill-down control is &quot;open&quot; (downwards-facing triangle).</li>
+<li><em>expandable (rows)</em> - Rows that can be expanded and collapsed; rows with drill-down controls.</li>
+<li><em>revealed (rows)</em> - Rows not currently hidden inside of containing rows.</li>
+<li><em>unrevealed (rows)</em> - Rows currently hidden inside of collapsed containing rows.</li>
+</ul></div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id=".collapseAllRows"><span class="type-signature">(static) </span>collapseAllRows<span class="signature">(includeHidden<span class="signature-attributes">opt</span>, smartApply<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+
+    
+    <p class="summary"><p>Convenience function to collapse all rows.</p></p>
+    
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>includeHidden</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>Include those rows that may be expanded even though &quot;unrevealed&quot; (see <em>Glossary</em> above).</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>smartApply</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last"><p>One of:</p>
+<ul>
+<li><code>true</code> - Apply and repaint if and only if a change was detected.</li>
+<li><code>false</code> - Always apply and repaint.</li>
+<li><code>undefined</code> - Never apply and repaint.</li>
+</ul></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".collapseRowsFromDepth"><span class="type-signature">(static) </span>collapseRowsFromDepth<span class="signature">(depth<span class="signature-attributes">opt</span>, smartApply<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {boolean|undefined}</span></h4>
+
+    
+    <p class="summary"><p>Collapse rows deeper than (or equal to) the given depth.</p></p>
+    
+
+
+
+<div class="description">
+    <p>Only affects <em>revealed rows</em> (those rows not hidden inside of currently collapsed rows); to affect <em>all rows,</em> call <a href="drillDown.html#.expandAndCollapseRows"><code>expandAndCollapseRows</code></a> instead.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>depth</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    0
+                
+                </td>
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>smartApply</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last"><p>One of:</p>
+<ul>
+<li><code>true</code> - Apply and repaint if and only if rows were collapsed.</li>
+<li><code>false</code> - Always apply and repaint.</li>
+<li><code>undefined</code> - Never apply and repaint.</li>
+</ul></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>If any rows collapsed; <code>undefined</code> means no rows had drill-down controls.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+|
+
+<span class="param-type">undefined</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".expandAllRows"><span class="type-signature">(static) </span>expandAllRows<span class="signature">(smartApply<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {boolean|undefined}</span></h4>
+
+    
+    <p class="summary"><p>Convenience function to expand all rows.</p></p>
+    
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>smartApply</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last"><p>One of:</p>
+<ul>
+<li><code>true</code> - Apply and repaint if and only if a change was detected.</li>
+<li><code>false</code> - Always apply and repaint.</li>
+<li><code>undefined</code> - Never apply and repaint.</li>
+</ul></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>If any rows expanded; <code>undefined</code> means no rows had drill-down controls.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+|
+
+<span class="param-type">undefined</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".expandAndCollapseRows"><span class="type-signature">(static) </span>expandAndCollapseRows<span class="signature">(depth<span class="signature-attributes">opt</span>, apply<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+
+    
+    <p class="summary"><p>Expand all rows to the given depth and collapse all other rows.</p></p>
+    
+
+
+
+<div class="description">
+    <p>Call without a <code>depth</code> to collapse all rows, including those that may be expanded even though &quot;unrevealed&quot; (see <em>Glossary</em> above).</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>depth</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    0
+                
+                </td>
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>apply</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last"><p>One of:</p>
+<ul>
+<li><code>true</code> - Always apply and repaint. (Note that this logic differs from those methods that take <code>smartApply</code>.)</li>
+<li><code>false</code> - Always apply and repaint.</li>
+<li><code>undefined</code> - Never apply and repaint.</li>
+</ul></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Always returns <code>true</code>.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".expandRowsToDepth"><span class="type-signature">(static) </span>expandRowsToDepth<span class="signature">(depth<span class="signature-attributes">opt</span>, smartApply<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {boolean|undefined}</span></h4>
+
+    
+    <p class="summary"><p>Expand all rows to the given depth.</p></p>
+    
+
+
+
+<div class="description">
+    <p>When called with a depth &lt; Infinity, expands those rows but does not collapse deeper rows. In such a case, consider calling <a href="drillDown.html#.expandAndCollapseRows"><code>expandAndCollapseRows</code></a> with that depth instead.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>depth</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    Infinity
+                
+                </td>
+            
+
+            <td class="description last"><p>See <a href="drillDown.html#.toggleAllRows"><code>toggleAllRows</code></a>.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>smartApply</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last"><p>One of:</p>
+<ul>
+<li><code>true</code> - Apply and repaint if and only if a change was detected.</li>
+<li><code>false</code> - Always apply and repaint.</li>
+<li><code>undefined</code> - Never apply and repaint.</li>
+</ul></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>If any rows expanded; <code>undefined</code> means no rows had drill-down controls.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+|
+
+<span class="param-type">undefined</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".revealRowByID"><span class="type-signature">(static) </span>revealRowByID<span class="signature">(ID)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+
+    
+    <p class="summary"><p>Expand nested drill-downs containing this row.</p></p>
+    
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>ID</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The unique row ID.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>If any rows expanded.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".toggleAllRows"><span class="type-signature">(static) </span>toggleAllRows<span class="signature">(expand<span class="signature-attributes">opt</span>, depth<span class="signature-attributes">opt</span>, smartApply<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {boolean|undefined}</span></h4>
+
+    
+    <p class="summary"><p>Toggle all revealed rows with drill-down controls.</p></p>
+    
+
+
+
+<div class="description">
+    <p>Operates only on rows that meet <em>bvoth</em> of the following criteria (see <em>Glossary</em> above):</p>
+<ul>
+<li>Expandable rows</li>
+<li>Revealed rows</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>expand</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>One of:</p>
+<ul>
+<li><code>true</code> - Expand all rows that are currently collapsed.</li>
+<li><code>false</code> - Collapse all rows that are currently expanded.</li>
+<li><code>undefined</code> (or omitted) - Expand all currently collapsed rows; collapse all currently expanded rows.</li>
+</ul></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>depth</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    Infinity
+                
+                </td>
+            
+
+            <td class="description last"><p>One of:</p>
+<ul>
+<li>number &gt; 0 - Apply only to rows above the given depth.</li>
+<li>number &lt;= 0 - Apply only to rows at or below the given depth.</li>
+</ul></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>smartApply</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last"><p>One of:</p>
+<ul>
+<li><code>true</code> - Apply and repaint if and only if a change was detected.</li>
+<li><code>false</code> - Always apply and repaint.</li>
+<li><code>undefined</code> - Never apply and repaint.</li>
+</ul></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>If any rows expanded or collapsed; <code>undefined</code> means no rows had drill-down controls.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+|
+
+<span class="param-type">undefined</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    © 2016 <a href="http://www.openfin.co" target="_blank">OpenFin</a> All Rights Reserved.
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
