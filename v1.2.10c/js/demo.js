@@ -187,6 +187,7 @@ window.onload = function() {
         buttons = document.getElementById('buttons');
 
     // Install the sorter and Filter APIs (optional).
+    // These modules are for EXAMPLE purposes only
     grid.setPipeline([
         window.datasaur.filter,
         Hypergrid.analytics.DataSourceSorterComposite
@@ -928,9 +929,9 @@ window.onload = function() {
                 undefined,
                 undefined,
                 undefined,
-                { color: '#116611', backgroundColor: '#e8ffe8', font: 'italic x-small verdana' },
-                { color: '#116611', backgroundColor: '#e8ffe8', font: 'italic x-small verdana' },
-                { color: '#116611', backgroundColor: '#e8ffe8', font: 'italic x-small verdana' }
+                { color: '#116611', backgroundColor: '#e8ffe8', font: 'italic small garamond' },
+                { color: '#116611', backgroundColor: '#e8ffe8', font: 'italic small garamond' },
+                { color: '#116611', backgroundColor: '#e8ffe8', font: 'italic small garamond' }
             ],
 
             fixedColumnCount: 1,

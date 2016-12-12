@@ -40,10 +40,23 @@
         <input type="checkbox" onchange="this.parentElement.parentElement.classList.toggle('nowrap')" checked>
         Wrap controls
     </label>
-    <label title="grid.properties.enableContinuousRepaint = true vs. false">
-        <input type="checkbox" onclick="grid.properties.enableContinuousRepaint=this.checked">
-        Continuous repaint
-    </label>
+    <div class="radio-group">
+        Render:
+        <label title="grid.properties.enableContinuousRepaint = false; // next requestAnimationFrame AND repaint was called">
+            <input type="radio" name="paint" onclick="random(false);grid.properties.enableContinuousRepaint=false" checked>
+            on repaint
+        </label>
+        <label title="grid.properties.enableContinuousRepaint = true // each requestAnimationFrame">
+            <input type="radio" name="paint" onclick="random(false);grid.properties.enableContinuousRepaint=true">
+            continuous
+        </label>
+        <label title="Call cancelAnimationFrame; then renderGrid on a 16-msec interval (a theoretical 62.5 fps).">
+            <input type="radio" name="paint" onclick="grid.properties.enableContinuousRepaint=false;random(true)">
+            maximum
+            <span id="fps" title="Chrome FPS meter not accurate when not using requestAnimationFrame!"></span>
+            <input type="button" onclick="grid.clearAllCellProperties()" value="Clear">
+        </label>
+    </div>
     <div class="radio-group">
         Render by:
         <label title="setGridRenderer('by-cells');
@@ -291,7 +304,7 @@ var alternatingThreeGreenRows = {
     };
 
 function setGridRenderer(rendererName) {
-    grid.properties.gridRenderer = rendererName;
+    grid.renderer.setGridRenderer(rendererName);
     logBundlesToConsole();
 }
 
@@ -365,6 +378,39 @@ function mangle(s) {
             return c;
         }
     }).join('');
+}
+
+var randomInterval, t1, t2, n = 0;
+var MAGNITUDE = 1000;
+function random(b) {
+    if (b) {
+        var fpsEl = document.getElementById('fps');
+        var cells = [];
+        for (var i = grid.renderer.visibleRows.length * grid.renderer.visibleColumns.length; --i;) {
+            if (/^\d/.test(grid.renderer.cellEventPool[i].value)) {
+                cells.push(grid.renderer.cellEventPool[i]);
+            }
+        }
+        grid.canvas.stopPaintLoop();
+        randomInterval = setInterval(function() {
+            var cellEvent = cells[Math.random() * cells.length | 0],
+                value = Math.floor(Math.random() * MAGNITUDE * 100) / 100;
+            cellEvent.value = value;
+            cellEvent.setCellProperty('backgroundColor', value < MAGNITUDE / 2 ? '#ffcccc' : '#ccffcc');
+            grid.renderer.renderGrid(grid.canvas.gc);
+            t2 = (Date.now() / 1000 | 0) % 10;
+            n += 1;
+            if (t2 !== t1) {
+                t1 = t2;
+                fpsEl.innerHTML = '(FPS=' + n + ')';
+                n = 0;
+            }
+        }, 1000 / 60);
+    } else {
+        clearInterval(randomInterval);
+        randomInterval = undefined;
+        grid.canvas.restartPaintLoop();
+    }
 }
     </script>
 </body>
