@@ -57,7 +57,7 @@
             <input type="radio" name="paint" onclick="grid.properties.enableContinuousRepaint=false;update(true)">
             changes
             <span id="fps" title="Chrome FPS meter not accurate when not using requestAnimationFrame!"></span>
-            <input type="range" style="width:30px" min="1" max="9" value="1" oninput="this.nextElementSibling.innerHTML=CHANGES=this.value">
+            <input type="range" id="changes" style="width:100px" min="1" max="500" value="1" oninput="this.nextElementSibling.innerHTML=CHANGES=this.value">
             (<span>1</span>)
             <input type="button" onclick="grid.clearAllCellProperties()" value="Clear">
         </label>
@@ -227,6 +227,9 @@ Renders all cells over consolidated row backgrounds, if any. Unsuitable as a cli
             <span id="row-count"></span>
         </label>
     </div>
+    <label>
+        Row height: <input type="range" min="15" max="75" value="34" oninput="nextElementSibling.innerHTML=grid.properties.defaultRowHeight=Number(this.value);grid.behavior.changed()"> (<span>34</span>)
+    </label>
     <label>
         Columns:   <input type="range" id="COLUMNS"   title="" min="1"  max="100" oninput="fixAll()"> (<span></span>) &nbsp;
         Rows:      <input type="range" id="ROWS"      title="" min="10" max="9999" step="10" oninput="fixAll()"> (<span></span>) &nbsp;
@@ -456,10 +459,15 @@ function update(b) {
 //            return grid.cellRenderers.get(rendererName);
 //        };
 
+        var changeMax;
         randomInterval = setInterval(function() {
             var rowNumberCells = grid.properties.showRowNumbers ? grid.renderer.visibleRows.length : 0,
                 dataCells = grid.renderer.visibleRows.length * grid.renderer.visibleColumns.length,
                 cellEvent, value;
+
+            if (changeMax !== dataCells) {
+                document.getElementById('changes').max = changeMax = dataCells;
+            }
 
             for (var i = CHANGES; i; --i) {
                 do {
